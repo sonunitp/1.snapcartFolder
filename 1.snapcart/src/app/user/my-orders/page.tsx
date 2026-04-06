@@ -82,14 +82,14 @@ return ()=>{socket.off("order-assigned")}
 <div className='fixed top-0 left-0 w-full backdrop-blur-lg bg-white/70 shadow-sm border-b z-50'>
 <div className='max-w-3xl mx-auto flex items-center gap-4 px-4 py-3'>
  <button className='p-2 bg-gray-100 rounded-full hover:bg-gray-200 active:scale-95 transition' onClick={()=>router.push("/")}>
-<ArrowLeft size={24} className="text-green-700"/>
+<ArrowLeft size={24} className="text-red-700"/>
  </button>
  <h1 className="text-xl font-bold text-gray-800">My Orders</h1>
 </div>
 </div>
 {orders?.length==0 ? (
   <div className='pt-20 flex flex-col items-center text-center'>
-    <PackageSearch size={70} className="text-green-600 mb-4" />
+    <PackageSearch size={70} className="text-red-600 mb-4" />
     <h2 className='text-xl font-semibold text-gray-700'>No Orders Found</h2>
     <p className='text-gray-500 text-sm mt-1'>Start shopping to view your orders here.</p>
   </div>

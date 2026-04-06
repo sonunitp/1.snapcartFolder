@@ -17,7 +17,7 @@ function CartPage() {
     const router=useRouter()
   return (
     <div className='w-[95%] sm:w-[90%] md:w-[80%] mx-auto mt-8 mb-24 relative'>
-      <Link href={"/"} className='absolute -top-2 left-0 flex items-center gap-2 text-green-700 hover:text-green-800 font-medium transition-all'>
+      <Link href={"/"} className='absolute -top-2 left-0 flex items-center gap-2 text-red-700 hover:text-red-800 font-medium transition-all'>
          <ArrowLeft size={20}/>
          <span className='hidden sm:inline'>Back to home</span>
       </Link>
@@ -25,7 +25,7 @@ function CartPage() {
 initial={{opacity:0,y:10}}
 animate={{opacity:1,y:0}}
 transition={{duration:0.3}}
-className='text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 text-center mb-10'
+className='text-2xl sm:text-3xl md:text-4xl font-bold text-red-700 text-center mb-10'
 >🛒 Your Shopping Cart</motion.h2>
 
 {cartData.length==0 ? (
@@ -37,7 +37,7 @@ className='text-center py-20 bg-white rounded-2xl shadow-md'
  >
   <ShoppingBasket className='w-16 h-16 text-gray-400 mx-auto mb-4'/>
   <p className='text-gray-600 text-lg mb-6'>Your Cart is empty. Add some groceries to continue shopping!</p> 
-  <Link href={"/"} className='bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition-all inline-block font-medium'>Continue Shopping</Link> 
+  <Link href={"/"} className='bg-red-600 text-white px-6 py-3 rounded-full hover:bg-red-700 transition-all inline-block font-medium'>Continue Shopping</Link> 
 
 </motion.div>
 
@@ -64,12 +64,12 @@ className='text-center py-20 bg-white rounded-2xl shadow-md'
                      <div className='mt-4 sm:mt-0 sm:ml-4 flex-1 text-center sm:text-left'>
                         <h3 className='text-base sm:text-lg font-semibold text-gray-800 line-clamp-1'>{item.name}</h3>
                         <p className='text-xs sm:text-sm text-gray-500'>{item.unit}</p>
-                        <p className='text-green-700 font-bold mt-1 text-sm sm:text-base'>₹{Number(item.price)*item.quantity}</p>
+                        <p className='text-red-700 font-bold mt-1 text-sm sm:text-base'>₹{Number(item.price)*item.quantity}</p>
                      </div>
                      <div className='flex items-center justify-center sm:justify-end gap-3 mt-3 sm:mt-0 bg-gray-50 px-3 py-2 rounded-full'>
-                       <button className='bg-white p-1.5 rounded-full hover:bg-green-100 transition-all border border-gray-200' onClick={()=>dispatch(decreaseQuantity(item._id))}><Minus size={14} className='text-green-700'/></button>
+                       <button className='bg-white p-1.5 rounded-full hover:bg-green-100 transition-all border border-gray-200' onClick={()=>dispatch(decreaseQuantity(item._id))}><Minus size={14} className='text-red-700'/></button>
                        <span className='font-semibold text-gray-800 w-6 text-center'>{item.quantity}</span>
-                       <button className='bg-white p-1.5 rounded-full hover:bg-green-100 transition-all border border-gray-200' onClick={()=>dispatch(increaseQuantity(item._id))}><Plus size={14} className='text-green-700'/></button>
+                       <button className='bg-white p-1.5 rounded-full hover:bg-green-100 transition-all border border-gray-200' onClick={()=>dispatch(increaseQuantity(item._id))}><Plus size={14} className='text-red-700'/></button>
                      </div>
                      <button className='sm:ml-4 mt-3 sm:mt-0 text-red-500 hover:text-red-700 transition-all' onClick={()=>dispatch(removeFromCart(item._id))}><Trash2 size={18}/></button>
                 </motion.div>
@@ -81,19 +81,19 @@ className='text-center py-20 bg-white rounded-2xl shadow-md'
 <div className='space-y-3 text-gray-700 text-sm sm:text-base'>
     <div className='flex justify-between'>
         <span>Subtotal</span>
-        <span className='text-green-700 font-semibold'>₹{subTotal}</span>
+        <span className='text-red-700 font-semibold'>₹{subTotal}</span>
     </div>
     <div className='flex justify-between'>
         <span>Delivery Fee</span>
-        <span className='text-green-700 font-semibold'>₹{deliveryFee}</span>
+        <span className='text-red-700 font-semibold'>₹{deliveryFee}</span>
     </div>
     <hr className='my-3'/>
 <div className='flex justify-between font-bold text-lg sm:text-xl'>
         <span>Final Total</span>
-        <span className='text-green-700 font-semibold'>₹{finalTotal}</span>
+        <span className='text-red-700 font-semibold'>₹{finalTotal}</span>
     </div>
 </div>
-<motion.button whileTap={{scale:0.95}} className='w-full mt-6 bg-green-600 text-white py-3 rounded-full hover:bg-green-700 transition-all font-semibold text-sm sm:text-base' onClick={()=>router.push("/user/checkout")}>
+<motion.button whileTap={{scale:0.95}} className='w-full mt-6 bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition-all font-semibold text-sm sm:text-base' onClick={()=>router.push("/user/checkout")}>
     Proceed to Checkout
 </motion.button>
       </motion.div>

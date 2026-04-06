@@ -10,7 +10,7 @@ import InitUser from "@/InitUser";
 
 
 export const metadata: Metadata = {
-  title: "Snapcart | 10 minutes grocery Delivery App",
+  title: "QuickMart| 10 minutes grocery Delivery App",
   description: "10 minutes grocery Delivery App",
 };
 

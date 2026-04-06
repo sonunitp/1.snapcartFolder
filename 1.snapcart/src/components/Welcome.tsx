@@ -7,7 +7,7 @@ nextStep:(s:number)=>void
 }
 function Welcome({nextStep}:propType) {
   return (
-    <div className='flex flex-col items-center justify-center min-h-screen text-center p-6 bg-linear-to-b from-green-100 to-white'>
+    <div className='flex flex-col items-center justify-center min-h-screen text-center p-6 bg-linear-to-b from-red-100 to-white'>
       <motion.div
       initial={{
         opacity:0,
@@ -22,8 +22,8 @@ function Welcome({nextStep}:propType) {
      }}
      className='flex items-center gap-3'
       >
-        <ShoppingBasket className='w-10 h-10 text-green-600'/>
-       <h1 className='text-4xl md:text-5xl font-extrabold text-green-700'>Snapcart</h1>
+        <ShoppingBasket className='w-10 h-10 text-red-600'/>
+       <h1 className='text-4xl md:text-5xl font-extrabold text-red-700'>QuickMart</h1>
        
         </motion.div>
     <motion.p
@@ -60,7 +60,7 @@ daily essentials delivered right to your doorstep.
      }}
      className='flex items-center justify-center gap-10 mt-10'
      >
-        <ShoppingBasket className='w-24 h-24 md:w-32 md:h-32 text-green-600 drop-shadow-md'/>
+        <ShoppingBasket className='w-24 h-24 md:w-32 md:h-32 text-red-600 drop-shadow-md'/>
         <Bike className='w-24 h-24 md:w-32 md:h-32 text-orange-500 drop-shadow-md'/>
 
     </motion.div>
@@ -78,7 +78,7 @@ daily essentials delivered right to your doorstep.
         delay:0.8
      }}
      
-     className='inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-2xl shadow-md transition-all duration-200 mt-10'
+     className='inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-3 px-8 rounded-2xl shadow-md transition-all duration-200 mt-10'
      onClick={()=>nextStep(2)}
      >
 Next 

@@ -171,7 +171,7 @@ const handleOnlinePayment=async ()=>{
         <div className='w-[92%] md:w-[80%] mx-auto py-10 relative'>
             <motion.button
                 whileTap={{ scale: 0.97 }}
-                className='absolute left-0 top-2 flex items-center gap-2 text-green-700 hover:text-green-800 font-semibold'
+                className='absolute left-0 top-2 flex items-center gap-2 text-red-700 hover:text-red-800 font-semibold'
                 onClick={() => router.push("/user/cart")}
             >
                 <ArrowLeft size={16} />
@@ -182,7 +182,7 @@ const handleOnlinePayment=async ()=>{
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3 }}
-                className='text-3xl md:text-4xl font-bold text-green-700 text-center mb-10'
+                className='text-3xl md:text-4xl font-bold text-red-700 text-center mb-10'
             >Checkout</motion.h1>
 
             <div className='grid md:grid-cols-2 gap-8'>
@@ -193,44 +193,44 @@ const handleOnlinePayment=async ()=>{
                     className='bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100'
                 >
                     <h2 className='text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2'>
-                        <MapPin className='text-green-700' /> Delivery Address
+                        <MapPin className='text-red-700' /> Delivery Address
                     </h2>
                     <div className='space-y-4'>
                         <div className='relative'>
-                            <User className="absolute left-3 top-3 text-green-600" size={18} />
+                            <User className="absolute left-3 top-3 text-red-600" size={18} />
                             <input type="text" value={address.fullName} onChange={(e) => setAddress((prev) => ({ ...prev, fullName: e.target.value }))} className='pl-10 w-full border rounded-lg p-3 text-sm bg-gray-50' />
                         </div>
                         <div className='relative'>
-                            <Phone className="absolute left-3 top-3 text-green-600" size={18} />
+                            <Phone className="absolute left-3 top-3 text-red-600" size={18} />
                             <input type="text" value={address.mobile} onChange={(e) => setAddress((prev) => ({ ...prev, mobile:  e.target.value  }))} className='pl-10 w-full border rounded-lg p-3 text-sm bg-gray-50' />
                         </div>
                         <div className='relative'>
-                            <Home className="absolute left-3 top-3 text-green-600" size={18} />
+                            <Home className="absolute left-3 top-3 text-red-600" size={18} />
                             <input type="text" value={address.fullAddress} placeholder='Full Address' onChange={(e) => setAddress((prev) => ({ ...prev, fullAddress: e.target.value  }))} className='pl-10 w-full border rounded-lg p-3 text-sm bg-gray-50' />
                         </div>
                         <div className='grid grid-cols-3 gap-3'>
                             <div className='relative'>
-                                <Building className="absolute left-3 top-3 text-green-600" size={18} />
+                                <Building className="absolute left-3 top-3 text-red-600" size={18} />
                                 <input type="text" value={address.city} placeholder='city' onChange={(e) => setAddress((prev) => ({ ...prev, city:  e.target.value  }))} className='pl-10 w-full border rounded-lg p-3 text-sm bg-gray-50' />
                             </div>
                             <div className='relative'>
-                                <Navigation className="absolute left-3 top-3 text-green-600" size={18} />
+                                <Navigation className="absolute left-3 top-3 text-red-600" size={18} />
                                 <input type="text" value={address.state} placeholder='state' onChange={(e) => setAddress((prev) => ({ ...prev, state:  e.target.value  }))} className='pl-10 w-full border rounded-lg p-3 text-sm bg-gray-50' />
                             </div>
                             <div className='relative'>
-                                <Search className="absolute left-3 top-3 text-green-600" size={18} />
+                                <Search className="absolute left-3 top-3 text-red-600" size={18} />
                                 <input type="text" value={address.pincode} placeholder='pincode' onChange={(e) => setAddress((prev) => ({ ...prev, pincode:  e.target.value  }))} className='pl-10 w-full border rounded-lg p-3 text-sm bg-gray-50' />
                             </div>
                         </div>
                         <div className='flex gap-2 mt-3'>
                             <input type="text" placeholder='search city or area...' className='flex-1 border rounded-lg p-3 text-sm focus:ring-2 focus:ring-green-500 outline-none' value={searchQuery} onChange={(e)=>setSearchQuery(e.target.value)}/>
-                            <button className='bg-green-600 text-white px-5 rounded-lg hover:bg-green-700 transition-all font-medium' onClick={handleSearchQuery}>{searchLoading?<Loader2 size={16} className='animate-spin'/>:"Search"}</button>
+                            <button className='bg-red-600 text-white px-5 rounded-lg hover:bg-red-700 transition-all font-medium' onClick={handleSearchQuery}>{searchLoading?<Loader2 size={16} className='animate-spin'/>:"Search"}</button>
                         </div>
                         <div className='relative mt-6 h-[330px] rounded-xl overflow-hidden border border-gray-200 shadow-inner'>
                             {position &&  <CheckOutMap position={position} setPosition={setPosition}/>}
                               <motion.button
                               whileTap={{scale:0.93}}
-                              className='absolute bottom-4 right-4 bg-green-600 text-white shadow-lg rounded-full p-3 hover:bg-green-700 transition-all flex items-center justify-center z-999'
+                              className='absolute bottom-4 right-4 bg-red-600 text-white shadow-lg rounded-full p-3 hover:bg-red-700 transition-all flex items-center justify-center z-999'
                               onClick={handleCurrentLocation}
                               >
                                <LocateFixed size={22}/>
@@ -244,42 +244,42 @@ const handleOnlinePayment=async ()=>{
                     transition={{ duration: 0.3 }}
                     className='bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 p-6 border border-gray-100 h-fit'
                 >
-                    <h2 className='text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2'><CreditCard className='text-green-600'/> Payment Method</h2>
+                    <h2 className='text-xl font-semibold text-gray-800 mb-4 flex items-center gap-2'><CreditCard className='text-red-600'/> Payment Method</h2>
                     <div className='space-y-4 mb-6'>
                        <button 
                        onClick={()=>setPaymentMethod("online")}
                        className={`flex items-center gap-3 w-full border rounded-lg p-3 transition-all ${
                 paymentMethod === "online"
-                  ? "border-green-600 bg-green-50 shadow-sm"
+                  ? "border-green-600 bg-red-50 shadow-sm"
                   : "hover:bg-gray-50"
               }`}>
-                        <CreditCardIcon className='text-green-600'/><span className='font-medium text-gray-700'>Pay Online (stripe)</span>
+                        <CreditCardIcon className='text-red-600'/><span className='font-medium text-gray-700'>Pay Online (stripe)</span>
                        </button>
                        <button 
                         onClick={()=>setPaymentMethod("cod")}
                        className={`flex items-center gap-3 w-full border rounded-lg p-3 transition-all ${
                 paymentMethod === "cod"
-                  ? "border-green-600 bg-green-50 shadow-sm"
+                  ? "border-red-600 bg-red-50 shadow-sm"
                   : "hover:bg-gray-50"
               }`}>
-                        <Truck className='text-green-600'/><span className='font-medium text-gray-700'>Cash on Delivery</span>
+                        <Truck className='text-red-600'/><span className='font-medium text-gray-700'>Cash on Delivery</span>
                        </button>
                     </div>
                     <div className='border-t pt-4 text-gray-700 space-y-2 text-sm sm:text-base'>
                         <div className='flex justify-between'>
                             <span className='font-semibold'>Subtotal</span>
-                            <span className='font-semibold text-green-600'>₹{subTotal}</span>
+                            <span className='font-semibold text-red-600'>₹{subTotal}</span>
                         </div>
                         <div className='flex justify-between'>
                             <span className='font-semibold'>Delivery Fee</span>
-                            <span className='font-semibold text-green-600'>₹{deliveryFee}</span>
+                            <span className='font-semibold text-red-600'>₹{deliveryFee}</span>
                         </div>
                       <div className='flex justify-between font-bold text-lg border-t pt-3'>
                             <span>Final Total</span>
-                            <span className='font-semibold text-green-600'>₹{finalTotal}</span>
+                            <span className='font-semibold text-red-600'>₹{finalTotal}</span>
                         </div>
                     </div>
-                    <motion.button whileTap={{scale:0.93}} className='w-full mt-6 bg-green-600 text-white py-3 rounded-full hover:bg-green-700 transition-all font-semibold'
+                    <motion.button whileTap={{scale:0.93}} className='w-full mt-6 bg-red-600 text-white py-3 rounded-full hover:bg-red-700 transition-all font-semibold'
                     onClick={()=>{
                         if(paymentMethod=="cod"){
                             handleCod()
